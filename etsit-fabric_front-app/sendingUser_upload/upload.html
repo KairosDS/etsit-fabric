@@ -1,0 +1,114 @@
+<div class="upload-wrapper">
+    <form method="POST" action="/upload" enctype="form-data" style="width:60%; margin: 2% auto 5%;">
+        <div class="form-group">
+            <label class="bold" for="key">ISDA:</label>
+            <input type="text" class="form-control" id="key" name="key" required>
+        </div>
+        <div class="row">
+            <div class="col" style="margin-bottom: 20px;">
+                <div class="form-group">
+                    <label class="bold" for="startDate">Start date of the ISDA Agreement:</label>
+                    <input type="date" class="form-control" id="startDate" name="startDate" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="bold" for="endDate">End date of the ISDA Agreement:</label>
+                    <input type="date" class="form-control" id="endDate" name="endDate" required disabled>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="bold" for="counterPartyA">Counterparty A Name:</label>
+            <input type="text" class="form-control" id="counterPartyA" name="counterPartyA" required>
+        </div>
+        <div class="form-group">
+            <label class="bold" for="counterPartyB">Counterparty B Name:</label>
+            <input type="text" class="form-control" id="counterPartyB" name="counterPartyB" required>
+        </div>
+        <div class="form-group">
+            <label class="bold" for="namePartyA">Name Party A:</label>
+            <input type="text" class="form-control" id="namePartyA" name="namePartyA" required>
+        </div>
+        <div class="form-group">
+            <label class="bold" for="namePartyB">Name Party B:</label>
+            <input type="text" class="form-control" id="namePartyB" name="namePartyB" required>
+        </div>
+        <div class="row">
+            <div class="col" style="margin-bottom: 20px;">
+                <div class="form-group" style="margin-bottom: 0px;">
+                    <label class="bold" for="signatureDateA">Signature A date:</label>
+                    <input type="date" class="form-control" id="signatureDateA" name="signatureDateA" required>
+                </div>
+            </div>
+            <div class="col" style="margin-bottom: 20px;">
+                <div class="form-group" style="margin-bottom: 0px;">
+                    <label class="bold" for="signatureDateB">Signature B date:</label>
+                    <input type="date" class="form-control" id="signatureDateB" name="signatureDateB" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="bold" for="payments">CSA:</label>
+            <input type="number" class="form-control" id="payments" name="payments" disabled>
+        </div>
+        <div class="form-group" style="margin-top: 25px;">
+            <label class="bold" for="key">File:</label>
+            <input type='file' accept='*' onchange='openFile(event)' required>
+        </div>
+        <div class="form-group" style="margin-top: 25px;">
+            <label class="bold" for="counterpartyUser">Counterparty user:</label>
+            {{#ifEquals userInfo.username "user1"}}
+            <input type='text' id="counterpartyUser" name="counterpartyUser" value="USER2" readonly> {{else}}
+            <input type='text' id="counterpartyUser" name="counterpartyUser" value="USER1" readonly> {{/ifEquals}}
+        </div>
+        <input type="hidden" class="form-control" id="fichero" name="fichero" required>
+        <button type="submit" class="btn btn-primary" style="margin-top: 0px;">Upload</button>
+    </form>
+    <script>
+
+        var pdfConverted;
+        var key;
+
+
+        var openFile = function (event) {
+            var input = event.target;
+
+            var reader = new FileReader();
+            reader.onload = function () {
+                var dataURL = reader.result;
+                asignValue(dataURL);
+            };
+            reader.readAsDataURL(input.files[0]);
+        };
+        function asignValue(pdf) {
+            document.getElementById('fichero').value = pdf;
+        }
+
+        let startDate = document.querySelector('#startDate');
+        let endDate = document.querySelector('#endDate');
+
+
+        function enableInput(inputToFill, inputDisabled) {
+            if (inputToFill !== "") {
+                inputDisabled.disabled = false;
+            }
+        }
+
+        function compareDates(startDateValue, endDateValue) {
+            if (startDateValue > endDateValue) {
+                alert("End date must be later or equal than start date");
+                endDate.value = "";
+            }
+        }
+
+        startDate.addEventListener('change', function () {
+            enableInput(startDate, endDate)
+        });
+
+        endDate.addEventListener('change', function () {
+            compareDates(startDate.value, endDate.value)
+        });
+
+    </script>
+</div>

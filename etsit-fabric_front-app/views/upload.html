@@ -1,0 +1,26 @@
+<div class="upload-wrapper">
+    <div class="upload-header">
+        <p class="upload-title">Completa el formulario del nuevo USUARIO</p>
+    </div>
+    <div class="main-form">
+        <form method="POST" action="/upload" enctype="form-data" class="grid-form">
+            <div class="form-group grid-item1 spec__upload-item1">
+                <label for="key" class="bold grid__item-title-up">USUARIO:</label>
+                <input type="text" class="form-control" id="key" name="key" required>
+            </div>
+            <div class="grid-item3 form-group">
+                <label for="startDate" class="bold grid__item-title-up">Nombre :</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="grid-item4 form-group">
+                <label for="endDate" class="bold grid__item-title-up">Edad :</label>
+                <input type="text" class="form-control" id="age" name="age" required>
+            </div>
+
+            <div class="grid-item17 spec-btn">
+                <input type="hidden" class="form-control" id="fichero" name="fichero" required>
+                <button type="submit" class="btn btn-primary">CREAR</button>
+            </div>
+    </div>
+    </form>
+</div>

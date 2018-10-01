@@ -1,0 +1,58 @@
+<div class="upload-wrapper">
+    <div class="upload-header">
+        <p class="upload-title">Contrato ISDA</p>
+    </div>
+
+    <div class="main-form">
+        <div class="grid-form">
+            <div class="form-group grid-item1 spec__todolist-item1">
+                <h5>ISDA</h5>
+                <p class="form-control">{{data.isdaname}}</p>
+            </div>
+            <div class="form-group grid-item5">
+                <h5>Start date of agreement:</h5>
+                <p class="form-control">{{data.startdate}}</p>
+            </div>
+            <div class="form-group grid-item6">
+                <h5>End date of agreement:</h5>
+                <p class="form-control">{{data.enddate}}</p>
+            </div>
+
+            <div class="form-group grid-item7">
+                <h5>Counterparty A Name:</h5>
+                <p class="form-control">{{data.counterpartya}}</p>
+            </div>
+            <div class="form-group grid-item8">
+                <h5>Counterparty B Name:</h5>
+                <p class="form-control">{{data.counterpartyb}}</p>
+            </div>
+            <div class="form-group grid-item9">
+                <h5>Name A:</h5>
+                <p class="form-control">{{data.namepartya}}</p>
+            </div>
+            <div class="form-group grid-item10">
+                <h5>Name B:</h5>
+                <p class="form-control">{{data.namepartyb}}</p>
+            </div>
+
+            <div class="form-group grid-item11">
+                <h5>Signature A date:</h5>
+                <p class="form-control">{{data.signaturea}}</p>
+            </div>
+            <div class="form-group grid-item12">
+                <h5>Signature B date:</h5>
+                <p class="form-control">{{data.signatureb}}</p>
+            </div>
+            <div class="form-group grid-item13 spec__todolist-item13">
+                <h5 class="bold file-label">File</h5>
+                <iframe class="file" src="{{pdf}}"></iframe>
+            </div>
+            <form method="POST" class="form-group grid-item21 spec-btn" action="/todolist" enctype="form-data">
+                <input type="hidden" class="form-control" id="key" name="key" value="{{data.isdaname}}-">
+                <button class="btn btn-primary btn-todo">Aprobar</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+</div>

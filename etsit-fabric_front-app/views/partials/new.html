@@ -1,0 +1,91 @@
+<div class="container upload-wrapper">
+        <div class="upload-header">
+            <p class="upload-title">Completa el formulario IRS</p>
+        </div>
+        <div class="main-form">
+            <form method="POST" action="/irs" enctype="form-data" class="grid-form2">
+                <input type="hidden" class="form-control" id="key" name="key" value="{{data.isdaname}}-" required />
+    
+                <div class="form-group grid-item1">
+                    <label for="irs" class="bold">IRS:</label>
+                    <input type="text" class="form-control large-field sub-grid" id="irs" name="irs" required />
+                </div>
+    
+                    <div class="form-group grid-item2">
+                        <label for="startDate" class="bold">Start date of the IRS Agreement:</label>
+                        <input type="date" class="form-control input-date" id="startDate" name="startDate" value="{{data.startdate}}" required />
+                    </div>
+                    <div class="grid-item3">
+                        <label for="endDate" class="bold">End date of the IRS Agreement:</label>
+                        <input type="date" class="form-control input-date" id="endDate" name="endDate" value="{{data.enddate}}" required />
+                    </div>
+                </div>
+                <div class="form-group grid-item3">
+                    <label for="operationDate" class="bold">Operation date:</label>
+                    <input type="date" class="form-control input-date" id="operationDate" name="operationDate" value="{{data.operationdate}}" required />
+                </div>
+                <div class="form-group grid-item4 grid-irs">
+                    <label for="finalDate" class="bold">Final date:</label>
+                    <input type="date" class="form-control input-date" id="finalDate" name="finalDate" value="{{data.finaldate}}" required />
+                </div>
+                <div class="form-group grid-item5">
+                    <label for="counterpartya" class="bold">Counterparty A Name:</label>
+                    <input class="form-control sub-grid" id="counterpartya" name="counterpartya" value="{{data.counterpartya}}" required />
+                </div>
+                <div class="form-group grid-item6">
+                    <label for="counterpartyb" class="bold">Counterparty B Name:</label>
+                    <input class="form-control sub-grid" id="counterpartyb" name="counterpartyb" value="{{data.counterpartyb}}" required />
+                </div>
+                <div class="grid-item7">
+                    <div class="form-group">
+                        <label for="qtyfixed" class="bold">Quantity fixed:</label>
+                        <input class="form-control sub-grid" id="qtyfixed" name="qtyfixed" value="{{data.qtyfixed}}" required />
+                    </div>
+                    <div class="form-group grid-irs2">
+                        <label for="qtyvariable" class="bold">Quatity variable:</label>
+                        <input class="form-control sub-grid" id="qtyvariable" name="qtyvariable" value="{{data.qtyvariable}}" required />
+                    </div>
+                </div>
+                <div class="form-group grid-item8 sub-grid">
+                    <label for="years" class="bold">Years:</label>
+                    <input class="form-control form-grid" id="years" name="years" value="{{data.years}}" required />
+                </div>
+                <div class="form-group grid-item9">
+                    <label for="variablepayment" class="bold">Payment type:</label>
+                    <select class="form-control sub-grid" id="paymentype" name="paymentype" value="{{data.paymentype}}" required>
+                        <option selected>Select payment type</option>
+                        <option value="mensual">Mensual</option>
+                        <option value="trimestral">Trimestral</option>
+                    </select>
+                </div>
+     
+    
+    
+        <div class="grid-item10">
+            <div class="form-group">
+                <label for="fixedpayment" class="bold">Fixed type:</label>
+                <input class="form-control sub-grid" id="fixedpayment" name="fixedpayment" value="{{data.fixedtype}}" required />
+            </div>
+            <div class="form-group grid-irs2">
+                <label for="variablepayment" class="bold">Variable type:</label>
+                <input class="form-control sub-grid" id="variablepayment" name="variablepayment" value="{{data.variabletype}}" required />
+            </div>
+        </div>
+    
+        <div class="form-group grid-item11">
+            <div class="mycontainer">
+                <label for="counterpartyUser" class="bold">Counterparty user:</label>
+                {{#ifEquals userInfo.username "user1"}}
+                <input type='text' class="user-display" id="counterpartyUser" name="counterpartyUser" value="user2"
+                    required /> {{else}}
+                <input type='text' class="user-display" id="counterpartyUser" name="counterpartyUser" value="user1"
+                    required /> {{/ifEquals}}
+    
+    
+                <div class="grid-item11">
+                    <button type="submit" class="btn btn-primary" style="margin-top: 0px;">Crear IRS</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>

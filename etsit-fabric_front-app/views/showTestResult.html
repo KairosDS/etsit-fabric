@@ -1,0 +1,22 @@
+<div>
+    {{#if testStored}}
+    <h3 class="col-sm-12 col-form-label" style="color: green">{{testStored}}</h3>
+    <a class="btn btn-primary" href="/tests/02/results">Show test result</a>
+    {{else if result}} {{#ifEquals result "OK"}}
+    <h3 class="col-sm-12 col-form-label">
+        <p class="bold">Test result:</p>
+        <span class="test-passed">Pass</span>
+    </h3>
+    {{/ifEquals}} {{#ifEquals result "KO"}}
+    <h3 class="col-sm-12 col-form-label">
+        <p class="bold">Test result:</p>
+        <span class="test-failed">Fail</span>
+    </h3>
+    {{/ifEquals}}
+    <br/>
+    <h3 class="col-sm-12 col-form-label">Go to
+        <a class="bold" href="/tests">All my tests</a> tab to obtain more details.</h3>
+    {{else}}
+    <h3 class="col-sm-12 col-form-label" style="color: red">There's been a problem</h3>
+    {{/if}}
+</div>

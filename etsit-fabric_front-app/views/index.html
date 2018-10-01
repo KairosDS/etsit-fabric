@@ -1,0 +1,26 @@
+<div class="tutorial__wrapper">
+    <h1 class="tutorial__title">Tutorial:</h1>
+    <h2 class="lead my-3">Upload and download Files to a Blockchain user</h2>
+    <div class="tutorial__card">
+        <h3>The user has the ability to: </h3>
+        <ul class="tutorial__list">
+            <li>Upload Files to a Fabric Blockchain</li>
+            <li>Download Files from a Fabric Blockchain</li>
+        </ul>
+        {{#if userInfo}}
+        {{#isLAB}}
+        <h3>User logged</h3>
+
+        {{/isLAB}}
+        {{else}}
+        <h3>In order to interact with this role login with:</h3>
+        <ul class="tutorial__list">
+            <li><span class="bold">User:</span><span class="text"> user</span></li>
+            <li><span class="bold">Password:</span><span> secret</span></li>
+        </ul>
+    </div>
+    <form class="tutorial__button" method="GET" action="/login">
+        <button class="btn btn-outline-primary tutorial__button" type="submit">Login</button>
+    </form>
+    {{/if}}
+</div>

@@ -1,0 +1,62 @@
+<div>
+    {{#if tests}}
+    <h3 class="col-sm-12 col-form-label">Mis test</h3>
+    <div>
+        <form method="POST" action="/tests/00/resultDetails" id="testForm">
+            <select class="form-control" id="test" name="test" required>
+                <option value="" selected hidden>Elige un test</option>
+                {{#each tests}}
+                <option value={{this}}>Test {{this}}</option>
+                {{/each}}
+            </select>
+            <br/>
+            <button type="submit" class="btn btn-primary">Mostrar detalle de los resultados</button>
+        </form>
+    </div>
+    {{else if testResults}}
+    <div class="bold">
+     
+        Puntuación:  {{testResults.score}}
+        <br/><br/>
+        Pasado:  {{testResults.passed}}
+        <br/><br/>
+        <a href="/tests/{{testResults.id}}/answerDetails" class="btn btn-primary" id="answerDetails">Show Answer Details</a>
+    </div>
+    {{else if answersDetails}}
+    <div>
+        {{#each answersDetails}} {{#ifEquals this.passed "OK"}}
+        <div class="bold">
+            <strong>Pregunta: </strong> {{this.question}}
+            <br/>
+            <strong>Respuesta correcta: </strong> {{this.correctAnswer}}
+            <br/>
+            <div class="test-passed">
+                <strong>Respuesta elegida: </strong> {{this.selectedAnswer}}
+            </div>
+            <br/>
+        </div>
+        {{/ifEquals}} {{#ifEquals this.passed "KO"}}
+        <div>
+            <strong>Pregunta: </strong> {{this.Pregunta}}
+            <br/>
+            <strong>Respuesta correcta: </strong> {{this.correctAnswer}}
+            <br/>
+            <div class="test-failed">
+                <strong>Respuesta elegida: </strong> {{this.selectedAnswer}}
+            </div>
+            <br/>
+        </div>
+        {{/ifEquals}} {{/each}}
+        <a href="/tests" class="btn btn-primary" id="testsPage">Volver a los test</a>
+    </div>
+    {{else}}
+    <h3 class="col-sm-12 col-form-label">No has hecho ningún test</h3>
+    {{/if}}
+</div>
+<script>
+    if (document.getElementById("test")) {
+        document.getElementById("test").onchange = function () {
+            document.getElementById("testForm").setAttribute("action", "/tests/" + this.value + "/resultDetails");
+        }
+    }
+</script>

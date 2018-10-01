@@ -1,0 +1,60 @@
+
+<div class="card wrapper-login">
+        <div class="card-header">
+            <h3>ISDA Contract</h5>
+        </div>
+  
+        {{#if data}}
+        <div class="card-body">
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <h5>ISDA</h5>
+                        <p>{{data.isdaname}}</p>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <h5>Start date of agreement:</h5>
+                        <p>{{data.startdate}}</p>
+                    </div>
+                    <div class="col">
+                        <h5>End date of agreement:</h5>
+                        <p>23/08/2016</p>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <h5>Counterparty A Name:</h5>
+                        <p>{{userInfo.username}}</p>
+                    </div>
+                    <div class="col">
+                        <h5>Counterparty B Name:</h5>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <h5>Name A Name:</h5>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <div class="col">
+                        <h5>Name B Name:</h5>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <h5>Signature A date:</h5>
+                        <p>23/08/2016</p>
+                    </div>
+                    <div class="col">
+                        <h5>Signature B date:</h5>
+                        <p>23/08/2016</p>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col file-wrapper">
+                        <h5>File</h5>
+                        <iframe class="embed-responsive-item card-pdf" src={{data}}></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
