@@ -5,7 +5,7 @@ Now, the API and the Blockchain infra are isolated, so:
 1. You have to execute ```./runApp.sh``` to raise the infra.
 2. And exuecute ```npm install``` and ```npm start``` to set up the API.
 
-> NOTE: The front App is located on https://github.com/KairosDS/living-lab_supply-chain-fabric_front-app.git at **storage branch**.
+> NOTE: The front App is located on https://github.com/KairosDS/etsit-fabric/tree/master/etsit-fabric_front-app.
 
 Now, you must configure at least one channel and set up a chaincode on the peers to interact with them. The steps that you have to execute manually are:
 1. Login
@@ -63,7 +63,7 @@ curl -s -X POST \
   -H "authorization: Bearer <put the Token here>" \
   -H "content-type: application/json" \
   -d '{
-	"peers": ["peer0.org1.example.com"]
+	"peers": ["peer0.org1.etsit.com"]
 }'
 ```
 
@@ -72,7 +72,7 @@ With Postmanm:
 As usual make a POST request to http://localhost:4000/channels/<channel name>/peers adding this raw  this time:
 ```
 {
-	"peers": ["peer0.org1.example.com"]
+	"peers": ["peer0.org1.etsit.com"]
 }
 ```
 In both cases peers will contain an array with the list of peers that you are joining to the channel .
@@ -89,9 +89,9 @@ curl -s -X POST \
   -H "authorization: Bearer <put the Token here>" \
   -H "content-type: application/json" \
   -d '{
-	"peers": ["peer0.org1.example.com"],
-	"chaincodeName":"certs",
-	"chaincodePath":"github.com/certs/go",
+	"peers": ["peer0.org1.etsit.com"],
+	"chaincodeName":"etsit",
+	"chaincodePath":"github.com/etsit/go",
 	"chaincodeType": "golang",
 	"chaincodeVersion":"v0"
 }'
@@ -103,9 +103,9 @@ A POST request to http://localhost:4000/chaincodes with this raw instead.
 
 ```
 {
-	"peers": ["peer0.org1.example.com"],
-	"chaincodeName":"certs",
-	"chaincodePath":"github.com/certs/go",
+	"peers": ["peer0.org1.etsit.com"],
+	"chaincodeName":"etsit",
+	"chaincodePath":"github.com/etsit/go",
 	"chaincodeType": "golang",
 	"chaincodeVersion":"v0"
 }
@@ -123,8 +123,8 @@ curl -s -X POST \
   -H "authorization: Bearer <put the Token here>" \
   -H "content-type: application/json" \
   -d '{
-	"peers": ["peer0.org1.example.com"],
-	"chaincodeName":"certs",
+	"peers": ["peer0.org1.etsit.com"],
+	"chaincodeName":"etsit",
 	"chaincodeVersion":"v0",
 	"chaincodeType": "golang",
 	"args":[]
@@ -137,8 +137,8 @@ Make a POST request to http://localhost:4000/channels/mychannel/chaincodes and i
 
 ```
 {
-	"peers": ["peer0.org1.example.com"],
-	"chaincodeName":"certs",
+	"peers": ["peer0.org1.etsit.com"],
+	"chaincodeName":"etsit",
 	"chaincodeVersion":"v1",
 	"chaincodeType": "golang",
 	"args":[""]
@@ -151,5 +151,5 @@ In both cases watch out to instantiate the chaincodes in the same peers list tha
 There is a collection in Postman with all the requests with the params etc, this collection will save you a lot of typping.
 
 
-After this requests, you could start the [front](https://github.com/KairosDS/living-lab_supply-chain-fabric_front-app/tree/storage) and have fun with Hyperledger.
+After this requests, you could start the [front](https://github.com/KairosDS/etsit-fabric/tree/master/etsit-fabric_front-app) and have fun with Hyperledger.
 
