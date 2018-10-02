@@ -1,3 +1,7 @@
+# fabric clients
+fabric-client-kv-org1/
+fabric-client-kv-org2/
+
 # Logs
 logs
 *.log
