@@ -2,49 +2,22 @@
 
 module.exports = {
     users: {
+        admin: {
+            id: '2133d32a',
+            username: 'admin',
+            name: 'First Admin',
+            org: 'org1',
+            password: '$2a$10$iqJSHD.BGr0E2IxQwYgJmeP3NvhPrXAeLSaGCj6IR/XU5QtjVu5Tm',   // 'secret'
+            roles: ['USER', 'ADMIN'],
+            blockchain: 'fabric'
+        },
         user: {
-            id: '2133d32e',
+            id: '2133d32b',
             username: 'user',
-            name: 'First Admin',
+            name: 'First User1',
             org: 'Org1',
             password: '$2a$10$iqJSHD.BGr0E2IxQwYgJmeP3NvhPrXAeLSaGCj6IR/XU5QtjVu5Tm',   // 'secret'
-            roles: ['USER', 'LAB'],
-            blockchain: 'fabric'
-        },
-        user1: {
-            id: '2133d32f',
-            username: 'user1',
-            name: 'First Admin',
-            org: 'Org1',
-            password: '$2a$10$iqJSHD.BGr0E2IxQwYgJmeP3NvhPrXAeLSaGCj6IR/XU5QtjVu5Tm',   // 'secret'
-            roles: ['USER', 'LAB'],
-            blockchain: 'fabric'
-        },
-        user3: {
-            id: '2133d32g',
-            username: 'user3',
-            name: 'First Admin',
-            org: 'Org1',
-            password: '$2a$10$iqJSHD.BGr0E2IxQwYgJmeP3NvhPrXAeLSaGCj6IR/XU5QtjVu5Tm',   // 'secret'
-            roles: ['USER', 'RISK'],
-            blockchain: 'fabric'
-        },
-        user4: {
-            id: '2133d32h',
-            username: 'user4',
-            name: 'First Admin',
-            org: 'Org1',
-            password: '$2a$10$iqJSHD.BGr0E2IxQwYgJmeP3NvhPrXAeLSaGCj6IR/XU5QtjVu5Tm',   // 'secret'
-            roles: ['USER', 'RISK'],
-            blockchain: 'fabric'
-        },
-        user2: {
-            id: '2133d32i',
-            username: 'user2',
-            name: 'First Admin',
-            org: 'Org1',
-            password: '$2a$10$iqJSHD.BGr0E2IxQwYgJmeP3NvhPrXAeLSaGCj6IR/XU5QtjVu5Tm',   // 'secret'
-            roles: ['USER', 'LAB'],
+            roles: ['USER'],
             blockchain: 'fabric'
         }
     }

@@ -1,26 +1,12 @@
-<div class="tutorial__wrapper">
-    <h1 class="tutorial__title">Tutorial:</h1>
-    <h2 class="lead my-3">Upload and download Files to a Blockchain user</h2>
-    <div class="tutorial__card">
-        <h3>The user has the ability to: </h3>
-        <ul class="tutorial__list">
-            <li>Upload Files to a Fabric Blockchain</li>
-            <li>Download Files from a Fabric Blockchain</li>
-        </ul>
-        {{#if userInfo}}
-        {{#isLAB}}
-        <h3>User logged</h3>
-
-        {{/isLAB}}
-        {{else}}
-        <h3>In order to interact with this role login with:</h3>
-        <ul class="tutorial__list">
-            <li><span class="bold">User:</span><span class="text"> user</span></li>
-            <li><span class="bold">Password:</span><span> secret</span></li>
-        </ul>
+<div class="jumbotron p-3 p-md-5 text-white rounded text-white text-center" style="background-color: #146aaf;">
+    <div class="col-md-12 px-0">
+        <h1 class="display-4 font-italic">Welcome to Etsit Demo App!</h1>
+        <p class="lead my-3">Demo to GET and SET properties on a Fabric Blockchain</p>
+        <br>
+        <p class="lead my-2">Login:</p>
+        <p class="lead my-2">User: user</p>
+        <p class="lead my-2">Password: secret</p>
+        <br>
+        <p class="lead my-2">Note: you must register this user within fabric-ca</p>
     </div>
-    <form class="tutorial__button" method="GET" action="/login">
-        <button class="btn btn-outline-primary tutorial__button" type="submit">Login</button>
-    </form>
-    {{/if}}
 </div>

@@ -1,17 +1,13 @@
-<div class="wrapper-login">
-    <h1 class="login-title"></h1>
-    <form method="POST" action="/login" class="wrapper-form">
-        <h2 class="form-title">ENTRA EN BLOCKCHAIN</h2>
+<div class="w-50 mx-auto">
+    <form method="POST" action="/login">
         <div class="form-group">
-            <label for="username"></label>
-            <input type="text" class="form-control credentials-btn" id="username" name="username" placeholder="Enter Username">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
         </div>
         <div class="form-group">
-            <label for="password"></label>
-            <input type="password" class="form-control credentials-btn" id="password" name="password" placeholder="Enter Password">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
         </div>
-        <a href="" class="password__reminder hidden">¿Olvidaste tu contraseña?</a>
-        <div class="password__reminder"></div>
-        <button type="submit" class="btn btn-primary login-tutorial">LOGIN</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

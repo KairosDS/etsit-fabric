@@ -19,15 +19,5 @@ module.exports = [
                 path: 'assets/images'
             }
         }
-    },
-
-    {
-        method: 'GET',
-        path: '/fonts/{file*}',
-        handler: {
-            directory: {
-                path: 'assets/fonts'
-            }
-        }
     }
 ]

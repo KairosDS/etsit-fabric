@@ -1,62 +1,47 @@
-<header class="header-wrapper">
-    <div id="overlay"></div>
-    <nav class="navbar navbar-header navbar-expand-md navbar-dark fixed-top bg-dark">
-        {{#if userInfo}}
-        <div class="header__user-detail">
-
-            <div class="showMenu-btn showMenu-btnDetail menu-selected">Menu</div>
-
-            <div class="user-profile">
-                <img src="/images/boldMan.png" class="user__photo user-profile_items" alt="user-photo">
-                <span class="user__name-menuDetail user-profile_items">{{userInfo.username}}</span>
-            </div>
-            <form class="form-inline user-profile_items" method="GET" action="/logout">
-                <button class="btn-outline-primaryMenu menu-selected" type="submit"></button>
-            </form>
-
-        </div>
-        <div class="navbar-nav mr-auto side__menu-wrapper ">
-            <div class="user__logged-menu">
-                <p class="user__name-menu">{{userInfo.username}}</p>
-            </div>
-            <ul class="nav-item side__menu-list active">
-                <li class="nav-item side__menu-list ">
-                    <a class="nav-link side__menu-link " href="/upload">Alta USUARIO </a>
-                </li>
-                <li class="nav-item side__menu-list ">
-                    <a class="nav-link side__menu-link " href="/modify">Consulta USUARIO </a>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">
+            <img src="/images/blockchain.png" style="width: 1.2em;" alt="Blockchain">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    {{#if userInfo}}
+                    <a class="nav-link" href="/dashboard">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                    {{else}}
+                    <a class="nav-link" href="/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                    {{/if}}
                 </li>
 
-                <form class="form-inline mt-2 mt-md-0" method="GET" action="/logout">
-                    <button class="btn-outline-primarySide my-2 my-sm-0" type="submit">Cerrar sesión</button>
-                </form>
+                <li class="nav-item">
+                    <a class="nav-link" href="/items">Create Item</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/query">Query Item</a>
+                </li>
+
+                <!--li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li-->
             </ul>
 
+            {{#if userInfo}}
+            <form class="form-inline mt-2 mt-md-0" method="GET" action="/logout">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Logout</button>
+            </form>
             {{else}}
-            <div class="navbar-nav mr-auto">
-            </div>
-        {{/if}}
+            <form class="form-inline mt-2 mt-md-0" method="GET" action="/login">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Login</button>
+            </form>
+            {{/if}}
+        </div>
     </nav>
 </header>
-<script>
-    const menuOpenBtn = document.querySelector('.showMenu-btn');
-    const sideMenu = document.querySelector('.side__menu-wrapper');
-    const overlay = document.getElementById("overlay");
-
-    menuOpenBtn.addEventListener('click', showMenu);
-    overlay.addEventListener('click', hideMenu);
-
-    function showMenu() {
-        sideMenu.classList.add('menu-visible');
-        sideMenu.classList.add('show');
-        overlay.style.display = ('block');
-    }
-
-    function hideMenu() {
-        if (!event.target.matches('.side__menu-wrapper')) {
-            sideMenu.classList.remove('menu-visible');
-            sideMenu.classList.remove('show');
-            overlay.style.display = ('none');
-        }
-    }
-</script>

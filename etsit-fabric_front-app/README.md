@@ -1,14 +1,17 @@
-## Balance transfer
-```
-cd living-lab_supply-chain-fabric_front-app
+# Pharmacy Front
 
-git checkout storage
-
+Pharmacy front project
+    
+### Local Execution
+```bash
+git clone https://github.com/KairosDS/living-lab_supply-chain-fabric_front-app
+git checkout pharmacy
 npm install
-
 npm start
 ```
 
-The infrastructure and API are located in [GitHub REPO]https://github.com/KairosDS/living-lab_supply-chain-fabric_infrastructure.git in storage branch.
+- Open browser [here](http://localhost:8000/)
+- Click Login button
+- User: admin, password: secret
 
-To start go to http://localhost:8000 in a web browser.
+For implementation details consult the [docs for hapi](https://hapijs.com/api)

@@ -9,7 +9,7 @@ body {
 }
 
 .footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -36,41 +36,10 @@ code {
   max-width: 100px;
 }
 
-.tutorial {
-  margin-top: 10%;
-  text-align: center;
-}
-.card-login {
-  width: 80%;
-  height: 25vh;
-  margin: auto;
-}
-
-.card-login ul {
-  list-style: none;
-}
-.card {
-  width: 100%;
-  height: 85vh;
-  margin: auto;
-}
-
-.col {
-  padding-bottom: 1.5%;
-}
-
 .card-deck .card {
   min-width: 20px;
 }
 
-.card-pdf {
-  width: 100%;
-  height: 80%;
-}
-.file-wrapper {
-  height: 40vh;
-  padding-bottom: 0;
-}
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
@@ -88,16 +57,6 @@ table {
   vertical-align: middle;
 }
 
-main div:last-child{
-  margin-bottom: 40px;
-}
-
-#counterpartyUser {
-   border: none;
-
-}
-.logo,
-.user__photo {
-  width: 50px;
-  height: 50px;
+.bg-dark {
+  background-color: #19334e!important;
 }

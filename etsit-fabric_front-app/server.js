@@ -9,13 +9,9 @@ const routes = require('./routes')
 
 const Handlebars = require('handlebars')
 
-Handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
-    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
-});
-
 const server = new Hapi.Server({
-    host: '0.0.0.0',
-    port: 8000,
+    host: '0.0.0.0', 
+    port: 8000
 })
 
 const viewsPath = Path.resolve(__dirname, 'views')
@@ -63,7 +59,7 @@ const liftOff = async () => {
         helpersPath: helpersPath,
         isCached: process.env.NODE_ENV === 'production',
         context: {
-            appTitle: 'Distributed Storage'
+            appTitle: 'Pharmacy'
         }
     })
     server.log('info', 'Views configured')
