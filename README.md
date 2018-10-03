@@ -7,3 +7,9 @@ To set up this App there are two parts:
 + [Front Application](https://github.com/KairosDS/etsit-fabric/tree/master/etsit-fabric_front-app): a simple web app that send requests to our API.
 
 Firstly, you will need to configure the infra (follow steps at the readme) and then, the front.
+
+## Screenshots
+
+![set](screenshots/set.png)
+
+![get](screenshots/get.png)
