@@ -1,3 +1,6 @@
+# MacOS files
+.DS_Store
+
 # fabric clients
 fabric-client-kv-org1/
 fabric-client-kv-org2/
