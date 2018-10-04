@@ -4,7 +4,7 @@ Etsit front project
     
 ### Local Execution
 ```bash
-git clone https://github.com/KairosDS/etsit-fabric/tree/master/etsit-fabric_front-app
+cd etsit-fabric_front-app
 npm install
 npm start
 ```
